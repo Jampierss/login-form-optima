@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/form.css">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="https://optimainmobiliaria.com/wp-content/uploads/2019/01/ico-150x150.png">
+
+    <title>Optima | formulario</title>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <main class="container">
+        <!-- Encabezado del formulario -->
+        <header>Formulario de compra</header>
+        
+        <!-- Formulario de múltiples páginas con dos secciones -->
+        <form method="post" action="final.html">
+            <!-- Sección 1: Información personal y propiedad buscada -->
+            <div class="first form">
+                <div class="details personal">
+                    <span class="title">Informacion Personal</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="nombre">Nombres</label>
+                            <input type="text" placeholder="Ingresa tu nombre" name="nombre" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" name="apellidos" id="" placeholder="Ingresa tus apellidos" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input type="date" name="fechaNacimiento" placeholder="Ingresa tu fecha de nacimiento" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="example@gmail.com" id="emailUser" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="celular">Celular</label>
+                            <input type="text" name="celular" id="celular" minlength="9" maxlength="9" placeholder="123 456 789" required>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="telefono">Telefono</label>
+                            <input type="number" maxlength="7" name="telefono">
+                        </div>
+                    </div>
+                </div>
+                <div class="type-of-property">
+                    <span class="title">Propiedad buscada</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="tipoPropiedad">Tipo de propiedad</label>
+                            <select name="tipoPropiedad" id="" required>
+                                <option value="" disabled selected>Selecciona un tipo de propiedad</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Departamento">Departamento</option>
+                                <option value="Terreno">Terreno</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="ubicacion">Ubicacion deseada</label>
+                            <input type="text" name="ubicacion" placeholder="Lima, San Isidro" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="precio">Precio deseado</label>
+                            <input type="number" name="precio" id="" placeholder="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="tamañoMinimo">Tamaño minimo</label>
+                            <input type="number" name="tamañoMinimo" id="" placeholder="En metros cuadrados" required>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="caracteristicas">Caracteristicas adicionales</label>
+                            <input type="text" name="caracteristicas" id="" placeholder="Piscina, jardin, garaje, etc">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="inmuebleNuevoOUsado">Inmueble nuevo o usado</label>
+                            <select name="inmuebleNuevoOUsado" required>
+                                <option value="" disabled selected>Escoge una opcion</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usada</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnTxt">Siguiente</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+
+                </div>
+            </div>
+                
+             <!-- Sección 2: Situación financiera e información adicional -->
+            <div class="second form">
+                <!-- Detalles de la situación financiera -->
+                <div class="details finances">
+                    <span class="title">Situacion Financiera</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="FinanciamientoNecesario">¿Necesita Financiamiento?</label>
+                            <select name="FinanciamientoNecesario" id="selectFinancia" onchange="habilitarOtroInput()" required>
+                                <option value="" disabled selected>Escoge una opcion</option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <script>
+                            function habilitarOtroInput() {
+                                const selectElement = document.getElementById('selectFinancia');
+                                const otroInputElement = document.getElementById('montoFinancia');
+
+                                if (selectElement.value === 'No') {
+                                    otroInputElement.disabled = true;
+                                } else {
+                                    otroInputElement.disabled = false;
+                                }
+                            }
+                        </script>
+
+
+
+                        <div class="input-field">
+                            <label for="montoFinanciamiento">Monto de financiamiento</label>
+                            <input type="number" name="montoFinanciamiento" id="montoFinancia">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="ocupacion">Ocupacion</label>
+                            <input type="text" name="ocupacion" placeholder="Profesion" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="empleador">Empleador Actual</label>
+                            <input name="empleador" type="text" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="ingresos">Ingresos Mensuales</label>
+                            <input type="number" name="ingresos" id="" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="ahorros">Ahorros disponibles</label>
+                            <input type="number" name="ahorros" id="" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalles de la información adicional -->
+                <div class="details aditionals">
+                    <span class="title">Informacion Adicional</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="historialCrediticio">Historial Crediticio</label>
+                            <select name="historialCrediticio" id="" required>
+                                <option value="" disabled selected>Escoge una opcion</option>
+                                <option value="buena">Buena</option>
+                                <option value="regular">Regular</option>
+                                <option value="mala">Mala</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="otrosActivos">Otros activos relevantes</label>
+                            <input type="text" name="otrosActivos" placeholder="Inversiones, propiedades, etc">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="fechaCompra">Fecha de compra estimada</label>
+                            <input type="date" name="fechaCompra" id="">    
+                        </div>
+
+                        <div class="input-field">
+                            <label for="ComproAnteriormenteIn">¿Has comprado propiedades anteriormente?</label>
+                            <select name="ComproAnteriormenteIn" id="" required>
+                                <option value="" disabled selected>Escoge una opcion</option>
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field" >
+                            <label for="mascota">¿Tienes mascotas?</label>
+                            <select name="mascota" id="" required>
+                                <option value="" disabled selected>Escoge una opcion</option>
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="infoExtra">Informacion Extra</label>
+                            <input type="text" name="infoExtra">
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <span class="btnTxt">Regresar</span>
+                        </div>
+
+                        <button class="submit" type="submit">
+                            <span class="btnTxt">Crear</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Scripts para manejar el formulario de múltiples páginas -->
+    <script src="js/multipage-form.js"></script>
+    <script src="js/crear.js"></script>
+    <script src="js/validar-form.js"></script>
+    <script src="js/get-email.js"></script>
+</body>
+</html>

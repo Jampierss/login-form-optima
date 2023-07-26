@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Optima | inmobiliaria</title>
+    
+    <link rel="icon" type="image/png" href="https://optimainmobiliaria.com/wp-content/uploads/2019/01/ico-150x150.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Others -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <!-- Contenedor izquierdo con el formulario de inicio de sesión -->
+        <div class="container">
+            <!-- Sección de inicio de sesión -->
+            <section class="section-sign-in">
+                <!-- Encabezado del formulario -->
+                <div class="frame-sign-title">
+                    <p id="sign-in-title">Sign in</p>
+                    <p id="sign-up-text">¿No tienes una cuenta? <a href="#" id="sign-up-button">Sing up</a></p>
+                </div>
+
+                <!-- Contenedor del formulario -->
+                <div class="container-form">
+                    <form action="form.html" id="login-form">
+                        <label for="email-input">Email</label><br>
+                        <input  type="email" name="email" class="input-form" id="emailDATA" placeholder="example@gmail.com" required>
+                        <br>
+                        <label for="pass">Contraseña</label><br>
+                        <input type="password" class="input-form" id="pass-input" required>
+                        
+                        <!-- Contenedor para opciones adicionales -->
+                        <div class="forget-pass-container">
+                            <div class="keep-sign-container">
+                                <input type="checkbox">
+                                <p id="keep">Keep me sign in</p>
+                            </div>
+                            <a href="">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <button id="btn-submit" type="submit" onclick=obtenerDatos()>Sign in</button>
+                    </form>
+                </div>
+
+                <!-- Otras opciones de inicio de sesión -->
+                <div class="sign-with-container">
+                    <div class="sing-with-txt">
+                        <p>Or sign in with</p>
+                    </div>
+                    <div class="btn-sign-google">
+                        <a href="#" class="google-login-btn">
+                            <img src="assets/images/google_icon.png" alt=""> Google
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contenedor derecho con el logo de Optima -->
+        <div class="container-right">
+            <img src="assets/images/Logo-optima.png" alt="" style="float: right; margin: 3%;">
+        </div>
+    </main>
+    <!-- Script para manejar el correo electrónico -->
+    <script src="js/set-email.js"></script>
+</body>
+</html>
